@@ -81,8 +81,8 @@ devDependencies:
     specifier: ^0.22.0
     version: 0.22.2
   tree-sitter-python:
-    specifier: ^0.20.4
-    version: 0.20.4
+    specifier: ^0.21.0
+    version: 0.21.0(tree-sitter@0.21.0)
   tree-sitter-ql:
     specifier: ^1.0.0
     version: 1.0.0
@@ -825,6 +825,16 @@ packages:
       semver: 7.6.0
     dev: true
 
+  /node-addon-api@7.1.0:
+    resolution: {integrity: sha512-mNcltoe1R8o7STTegSOHdnJNN7s5EUvhoS7ShnTHDyOSd+8H+UdWODq6qSv67PjC8Zc5JRT8+oLAMCr0SIXw7g==}
+    engines: {node: ^16 || ^18 || >= 20}
+    dev: true
+
+  /node-gyp-build@4.8.0:
+    resolution: {integrity: sha512-u6fs2AEUljNho3EYTJNBfImO5QTo/J/1Etd+NVdCj7qWKUSN/bSLkZwhDv7I+w/MSC6qJ4cknepkAYykDdK8og==}
+    hasBin: true
+    dev: true
+
   /node-gyp@10.0.1:
     resolution: {integrity: sha512-gg3/bHehQfZivQVfqIyy8wTdSymF9yTyP4CJifK73imyNMU8AIGQE2pUa7dNWfmMeG9cDVF2eehiRMv0LC1iAg==}
     engines: {node: ^16.14.0 || >=18.0.0}
@@ -1348,11 +1358,19 @@ packages:
       nan: 2.18.0
     dev: true
 
-  /tree-sitter-python@0.20.4:
-    resolution: {integrity: sha512-F+94q/t9+4J5yaQnmfAqEf4OZFjuhuyniRtb9P2jPaBwHrbyJL44RKFALovZxhF0syLFKpTQ7ODywyiGeB1YMg==}
+  /tree-sitter-python@0.21.0(tree-sitter@0.21.0):
+    resolution: {integrity: sha512-IUKx7JcTVbByUx1iHGFS/QsIjx7pqwTMHL9bl/NGyhyyydbfNrpruo2C7W6V4KZrbkkCOlX8QVrCoGOFW5qecg==}
     requiresBuild: true
+    peerDependencies:
+      tree-sitter: ^0.21.0
+      tree_sitter: '*'
+    peerDependenciesMeta:
+      tree_sitter:
+        optional: true
     dependencies:
-      nan: 2.18.0
+      node-addon-api: 7.1.0
+      node-gyp-build: 4.8.0
+      tree-sitter: 0.21.0
     dev: true
 
   /tree-sitter-ql@1.0.0:
@@ -1438,6 +1456,14 @@ packages:
     dependencies:
       nan: 2.18.0
       prebuild-install: 7.1.2
+    dev: true
+
+  /tree-sitter@0.21.0:
+    resolution: {integrity: sha512-WDhpLxQdW7wsmmnBsf4NGqnEKs+Kxljk/CfbJJxgzZiinfA1gAWnhi/GirQjClw+woXhYsNq930BlskFulMMBQ==}
+    requiresBuild: true
+    dependencies:
+      node-addon-api: 7.1.0
+      node-gyp-build: 4.8.0
     dev: true
 
   /ts-node@10.9.2(@types/node@20.11.24)(typescript@5.3.3):
